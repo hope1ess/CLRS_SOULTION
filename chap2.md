@@ -1,7 +1,7 @@
-2.1-1  
+**Exercise 2.1-1**  
 略  
 
-2.1-2  
+**Exercise 2.1-2**  
 ```c++
 #include <iostream>
 using namespace std;
@@ -30,7 +30,7 @@ int main()
 }
 ```
 
-2.1-3
+**Exercise 2.1-3**
 ```c++
 const int nil = -1;
 int linear_finding(int* a, int size, int v)
@@ -42,7 +42,7 @@ int linear_finding(int* a, int size, int v)
 }
 ```
 
-2.1-4
+**Exercise 2.1-4**
 ```c++
 int* binary_adding(int* a, int* b, int size)
 {
@@ -58,10 +58,10 @@ int* binary_adding(int* a, int* b, int size)
 }
 ```
 
-2.2-1  
+**Exercise 2.2-1**  
 $\theta$($n^3$)  
 
-2.2-2
+**Exercise 2.2-2**
 ```c++
 void selection_sort(int* a, int size)
 {
@@ -86,8 +86,8 @@ A:因为第n-1次时，比较了最后两个元素的大小，确定n-1处的元
   
 最坏和最好情况都是$\theta$($n^2$)  
   
-2.2-3  
+**Exercise 2.2-3**  
 暂时不答  
   
-2.2-4  
+**Exercise 2.2-4**  
 不会  
