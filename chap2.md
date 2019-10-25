@@ -126,3 +126,23 @@ T(n)=\begin{cases}
 	T(n - 1) + \theta(n),\quad n > 1
 \end{cases}
 $$
+  
+**Exercise 2.3-5**
+```c++
+binary_search(A, V, left, right)
+while left <= right
+	mid = (left + right) / 2
+	if (A[mid] == V)
+		return mid
+	else if (A[mid] > v)
+		left = mid + 1
+	else
+		right = mid - 1
+return nil
+```
+  
+**Exercise 2.3-6**  
+不会啊  
+  
+**Exercise 2.3-7**
+暂时8会
