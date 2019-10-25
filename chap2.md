@@ -3,59 +3,39 @@
 
 **Exercise 2.1-2**  
 ```c++
-#include <iostream>
-using namespace std;
-void insertion_sort(int* a, int size)
-{
-	for (int i = 1; i < size; ++i)
-	{
-		int key = a[i];
-		int j = i - 1;
-		while (j >= 0 && a[j] < key)
-		{
-			a[j + 1] = a[j];
-			j = j - 1;
-		}
-		a[j + 1] = key;
-	}
-}
-int main()
-{
-	int a[5] = { 5, 34, 234, 12, 4 };
-	insertion_sort(a, 5);
-	for (int i = 0; i < 5; ++i)
-		cout << a[i] << " ";
-	cout << endl;
-	return 0;
-}
+insertion_sort(A)
+for j = 2 to A.length
+	key = A[j]
+	i = j - 1
+	while i > 0 and A[i] < key
+		A[i + 1] = A[i]
+		i = i + 1
+	A[i + 1] = key
 ```
 
 **Exercise 2.1-3**
 ```c++
-const int nil = -1;
-int linear_finding(int* a, int size, int v)
-{
-	for (int i = 0; i < size; ++i)
-		if (a[i] == v)
-			return i;
-	return nil;
-}
+LINEAR_SEARCHING(A, V)
+	for (i = 1 to A.length)
+		if A[i] == v
+			return i
+	return nil
 ```
+循环不变式：A[1……i - 1]中没有V
+初始化：i = 1时，A为空数组，无需证明
+保持：对于A[i]之前的所有元素，如若相等，就已经返回了，所以A[1……i - 1]中没有V
+终止：当i = A.length + 1时，退出循环，表示数组没有元素V，既返回nil
 
 **Exercise 2.1-4**
 ```c++
-int* binary_adding(int* a, int* b, int size)
-{
-	int* c = new int[size + 1];
-	int carry = 0;
-	for (int i = size - 1; i >= 0; --i)
-	{
-		c[i + 1] = (a[i] + b[i] + carry) % 2;
-		carry = (a[i] + b[i] + carry) / 2;
-	}
-	c[0] = carry;
-	return c;
-}
+binary_adding(A, B)
+C是一个新数组，大小为A.size + 1
+carry = 0
+for i = A.length downto 1
+	C[i + 1] = (A[i] + B[i] + carry) % 2
+	carry = (A[i] + B[i] + carry) / 2
+C[0] = carry
+return C
 ```
 
 **Exercise 2.2-1**  
