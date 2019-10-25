@@ -71,3 +71,58 @@ A:因为第n-1次时，比较了最后两个元素的大小，确定n-1处的元
   
 **Exercise 2.2-4**  
 不会  
+  
+**Exercise 2.3-1**  
+略  
+  
+**Exercise 2.3-2**  
+```c++
+merge(A, p, q, r)
+n1 = q - p + 1
+n2 = r - q
+let L[1..n1 + 1] and R[1..n2 + 1] be new arrays
+for i = 1 to n1
+	L[i] = A[p + i - 1]
+for j = 1 to n2
+	R[j] = A[q + j]
+L[n1 + 1] = INF
+R[n1 + 1] = INF
+i = 1
+j = 1
+for k = p to r
+	if (L[i] == INF)
+		A[k] = R[j]
+		j = j + 1
+	else if (R[j] == INF)
+		A[k] = L[i]	
+		i = i + 1
+	else if (L[i] < R[j])
+		A[k] = L[i]
+		i = i + 1
+	else
+		A[k] = R[j]
+		j = j + 1
+```
+  
+**Exercise 2.3-3**  
+不会  
+  
+**Exercise 2.3-4**
+```c++
+insertion_sort(A, length)
+if length == 1
+	return
+insertion_sort(A, length - 1)
+key = A[length]
+i = length - 1
+while i > 0 and A[i] > key
+	a[i + 1] = A[i]
+	i = i + 1
+A[i + 1] = key
+```  
+$$
+T(n)=\begin{cases}
+	\theta(1),\quad n\leq1 \\\\
+	T(n - 1) + \theta(n),\quad n > 1
+\end{cases}
+$$
